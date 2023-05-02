@@ -1,0 +1,55 @@
+[
+  {
+    "Date" :  "2023-04-31",
+    "Temperatue" : "27°C",
+    "Humidite" : "40%"
+  },
+
+  {
+    "Date" :  "2023-05-01",
+    "Temperatue" : "25°C",
+    "Humidite" : "37%"
+  },
+
+  {
+    "Date" : "2023-05-02",
+    "Temperatue" : "28°C",
+    "Humidite" : "39%"
+  },
+
+  {
+    "Date" : "2023-05-03",
+    "Temperatue" : "23°C",
+    "Humidite" : "35%"
+  },
+
+  {
+    "Date" : "2023-05-04",
+    "Temperatue" : "28°C",
+    "Humidite" : "40%"
+  },
+
+  {
+    "Date" : "2023-05-05",
+    "Temperatue" : "24°C",
+    "Humidite" : "32%"
+  },
+
+  {
+    "Date" : "2023-05-06",
+    "Temperatue" : "30°C",
+    "Humidite" : "41%"
+  },
+
+  {
+    "Date" : "2023-05-07",
+    "Temperatue" : "40°C",
+    "Humidite" : "56%"
+  },
+
+  {
+    "Date" : "2023-05-08",
+    "Temperatue" : "41°C",
+    "Humidite" : "58%"
+  }
+]
