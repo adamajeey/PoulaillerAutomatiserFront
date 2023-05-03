@@ -1,0 +1,37 @@
+<div class="titre">
+  <h2>Historique des températures et humidités du poulailler</h2>
+</div> <br>
+
+<div class="container">
+  <div class="input-group mb-3 w-25" style="margin-left: 62.5%;">
+    <input type="date" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2"  [(ngModel)]="filterTerm">
+    <button class="btn btn-secondary" type="button" id="button-addon2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg></button>
+  </div>
+
+<div class="d-flex justify-content-center  w-75 mb-4" style="margin:0 auto">
+
+  <table class="table table-bordered " style="border: 2px solid ;">
+    <thead class="bag">
+      <tr>
+        <th scope="col">
+          <p> Date<img src="assets/calen.web" alt=""></p>
+        </th>
+        <th scope="col"><i class="bi bi-thermometer-half"></i>
+          <p style="text-align: center;"> Temperature</p>
+        </th>
+        <th scope="col"> <i class="bi bi-droplet-half"></i>
+          <p style="text-align: center;">Humidite</p>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let i of temphum | filter: filterTerm">
+        <td>{{ i.Date }}</td>
+        <td>{{ i.Temperatue }}</td>
+        <td>{{ i.Humidite }}</td>
+      </tr>
+    </tbody>
+
