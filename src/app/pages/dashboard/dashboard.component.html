@@ -1,1 +1,111 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Titre de la page</title>
+   </head>
+   <body>
+      <div class="container mt-1">
+         <div class="d-flex align-items gap-5">
+          <div class="d-block ">
+            <div class="col-md-4">
+              <div class="card border border-2 border-warning" style="width:400px;height: 200px;">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Température</h4>
+                  <h2>25°</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-5">
+              <div class="card border border-2 border-warning" style="width:400px;">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Eau</h4>
+                  <div>
+                    <img class="card-img-top" src="{{imageEau}}" alt="" style="width:100px">
+                  </div>
+                  <div class="card-body">
+                    <button (click)="onClickEau()" type="button" class="btn ">
+                      <img class="card-img-top" src="{{buttonEau}}"  alt="" style="width:100%">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-4">
+              <div class="card border border-2 border-warning">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Lampe</h4>
+                  <div>
+                    <img class="card-img-top"src="{{imageLampe}}" alt="" style="width:100px">
+                  </div>
+                  <button (click)="onClickLampe()" type="button" class="btn ">
+                    <img class="card-img-top" src="{{buttonLampe}}"  alt="" style="width:100%">
+                  </button>
+                </div>
+                <div class="card-body text-center">
+                  <h4 class="card-title">porte</h4>
+                  <div> 
+                    <img class="card-img-top" src="{{imagePorte}}" alt="" style="width:100px">
+                  </div>
+                  <button (click)="onClickPorte()" type="button" class="btn ">
+                    <img class="card-img-top" src="{{buttonPorte}}"  alt="" style="width:100%">
+                  </button>
+                </div>
+              </div>
+             
+            </div>
+            <div class="d-block ">
+              <div class="col-md-4">
+                <div class="card border border-2 border-warning" style="width:400px; height: 200px;">
+                  <div class="card-body text-center">
+                    <h4 class="card-title">Humidité</h4>
+                    <h2>60%</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mt-5">
+                <div class="card border border-2 border-warning" style="width:400px;">
+                  <div class="card-body text-center">
+                    <h4 class="card-title">Aliment</h4>
+                    <div>
+                      <img class="card-img-top" src="{{imageAliment}}" alt="" style="width:100px">
+                    </div>
+                    <div class="card-body">
+                      <button (click)="onClickAliment()" type="button" class="btn ">
+                        <img class="card-img-top" src="{{buttonAliment}}"  alt="" style="width:100%">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+         </div>
+<!--  -->
+<div class="col-md-2 mt-5">
+  <div class="card border border-2 border-warning flex-row" style="width: 1325px;">
+    <div class="card-body text-center">
+      <h4 class="card-title">Refroidisseur</h4>
+     <div> 
+        <img class="card-img-top"  src="{{imageFroidir}}" alt="" style="width:100px">
+      </div>
+      <button (click)="onClickExtracteur()" type="button" class="btn ">
+        <img class="card-img-top" src="{{buttonFroidir}}"  alt="" style="width:100%">
+      </button>
+    </div>
+    <div class="card-body text-center">
+      <h4 class="card-title">Rechauffage</h4>
+      <div> 
+        <img class="card-img-top"  src="{{imageRechaud}}" alt="" style="width:80px">
+      </div>
+      <button (click)="onClickRechauffeur()" type="button" class="btn w-2">
+        <img class="card-img-top" src="{{buttonRecaud}}"  alt="" style="width:100%">
+      </button>
+    </div>
+  </div>
+</div>
+
+
+                
+    
+    
