@@ -22,7 +22,7 @@ export class HistoriqueComponent implements OnInit {
 
 histo: any[] = temphumjson ;
 filterTerm!: string;
-itemsperpage: number=4;
+itemsperpage: number=7;
 p: number=1;
 
 

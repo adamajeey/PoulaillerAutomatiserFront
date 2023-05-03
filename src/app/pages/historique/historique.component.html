@@ -28,10 +28,15 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let i of temphum | filter: filterTerm">
+      <tr *ngFor="let i of temphum | filter: filterTerm | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
         <td>{{ i.Date }}</td>
         <td>{{ i.Temperatue }}</td>
         <td>{{ i.Humidite }}</td>
+
+        <div class="pagination fixed-bottom justify-content-center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+
       </tr>
     </tbody>
 

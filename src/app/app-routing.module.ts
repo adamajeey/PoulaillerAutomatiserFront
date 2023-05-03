@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
+import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 
 const routes: Routes = [
   {component:LoginComponent, path:'login'},
   { component:SidebarComponent, path: 'sidebar'},
-  { component:HistoriqueComponent, path: 'historique'}
+  { component:HistoriqueComponent, path: 'historique'},
+  { component:ModifPasswordComponent, path: 'password'}
 ];
 
 @NgModule({

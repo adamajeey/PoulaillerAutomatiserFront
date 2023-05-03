@@ -9,6 +9,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
+
+
 
 /* import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
@@ -18,8 +21,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     LoginComponent,
     SidebarComponent,
     HistoriqueComponent,
- /* ModifPasswordComponent,
-    DashboardComponent */
+    ModifPasswordComponent,
   ],
   imports: [
     BrowserModule,
