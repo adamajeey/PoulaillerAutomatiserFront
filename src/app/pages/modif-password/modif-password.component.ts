@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-modif-password',
   templateUrl: './modif-password.component.html',
@@ -11,6 +12,7 @@ export class ModifPasswordComponent implements OnInit {
   title = 'login';
   submitted = false;
   spin= false;
+
 
   constructor(private formBuilder:FormBuilder) {}
 
@@ -41,6 +43,7 @@ export class ModifPasswordComponent implements OnInit {
 
     }
     }
+
  }
 
 
