@@ -12,6 +12,8 @@ import { HistoriqueComponent } from './pages/historique/historique.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { InfosPoulaillerComponent } from './pages/infos-poulailler/infos-poulailler.component';
+import { LocalisationPoulaillerComponent } from './pages/localisation-poulailler/localisation-poulailler.component';
 
 
 
@@ -24,7 +26,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     SidebarComponent,
     HistoriqueComponent,
     ModifPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    InfosPoulaillerComponent,
+    LocalisationPoulaillerComponent
 
   ],
   imports: [
