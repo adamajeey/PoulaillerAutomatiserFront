@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -10,6 +11,7 @@ import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 
@@ -22,6 +24,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     SidebarComponent,
     HistoriqueComponent,
     ModifPasswordComponent,
+    DashboardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

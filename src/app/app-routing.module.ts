@@ -8,10 +8,8 @@ import { ModifPasswordComponent } from './pages/modif-password/modif-password.co
 
 const routes: Routes = [
   {component:LoginComponent, path:'login'},
-  {component:DashboardComponent, path: 'tableau' },
-  { component:SidebarComponent, path: 'sidebar'},
-  { component:HistoriqueComponent, path: 'historique'},
-  { component:ModifPasswordComponent, path: 'password'}
+  { component:SidebarComponent, path: 'accueil'},
+  { component:HistoriqueComponent, path: 'historique'}
 ];
 
 @NgModule({

@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
+
+  showDashboard:boolean = true;
+
   imageRechaud = '';  imageFroidir = ''; imagePorte = ''; imageEau = ''; imageAliment = ''; imageLampe = '';
   buttonRecaud ='';   buttonFroidir ='';  buttonPorte ='';  buttonEau =''; buttonAliment =''; buttonLampe ='';
   chaud0 = '../assets/image/chaud0.png'; offChaud = '../assets/image/off.png'; chaud1 = '../assets/image/chaud1.png'; onChaud = '../assets/image/on.png';
@@ -48,7 +51,7 @@ export class DashboardComponent {
     }
 
   }
-  
+
   /* allumer ou eteindre l'extracteur  */
 onClickExtracteur() {
   if (this.imageFroidir === this.fanon && this.buttonFroidir === this.onFan  ) {
@@ -101,7 +104,7 @@ onClickExtracteur() {
 
     this.imageEau = this.eau0
     this.buttonEau = this.offEau;
-    
+
   }
 
 }

@@ -14,6 +14,10 @@
       <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
     </svg>
 
+
+<a role="button" class="navbar-brand" data-bs-toggle="modal" href="#exampleModalPassword" role="button"
+    data-toggle="tooltip" data-placement="top"
+        title="Modifier votre mot de passe">
     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-repeat"
       viewBox="0 0 16 16" role="button">
       <path
@@ -21,6 +25,8 @@
       <path fill-rule="evenodd"
         d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
     </svg>
+</a>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-box-arrow-right"
       viewBox="0 0 16 16" role="button">
@@ -32,25 +38,49 @@
   </div>
 </div>
 
-<div class="sidebar">
-  <div class="list-group list-group-flush mx-3 mt-2 p-4">
-    <img src="../../../assets/Rectangle 12.jpg" alt="" width="200" height="200" class="rounded-circle m-auto mb-2"
-      title="logo">
+<div class="d-flex">
+  <div class="sidebar">
+    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+      <img src="../../../assets/Rectangle 12.jpg" alt="" width="200" height="200" class="rounded-circle m-auto mb-2"
+        title="logo">
+    </div>
+
+    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+      <img src="../../../assets/Accueil.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
+        title="Accueil" role="button">
+    </div>
+
+    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+      <img src="../../../assets/parametre.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
+        title="parametre" role="button">
+    </div>
+
+    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+      <img src="../../../assets/historique.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
+        title="historique" role="button">
+    </div>
+
   </div>
 
-  <div class="list-group list-group-flush mx-3 mt-2 p-4">
-    <img src="../../../assets/Accueil.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
-      title="Accueil" role="button">
-  </div>
+  <!-- Dashboard-->
 
-  <div class="list-group list-group-flush mx-3 mt-2 p-4">
-    <img src="../../../assets/parametre.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
-      title="parametre" role="button">
+  <div class="w-100 d-flex justify-content-center">
+    <app-dashboard></app-dashboard>
   </div>
+</div>
 
-  <div class="list-group list-group-flush mx-3 mt-2 p-4">
-    <img src="../../../assets/historique.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
-      title="historique" role="button">
-  </div>
 
+<div class="modal modal-md fade" id="exampleModalPassword" aria-hidden="true" aria-labelledby="exampleModalPassword"
+    tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow">
+            <div class="modal-header shadow" style="background-color: #E59E0E;">
+                <h5 class="modal-title border text text-center shadow " id="exampleModalPassword" style="margin: 0 90px;padding: 5px; min-width: 300px; border-radius: 10px; color: #FFFFFF;">Modifier votre mot de passe</h5>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                &nbsp;
+                <app-modif-password></app-modif-password>
+            </div>
+        </div>
+    </div>
 </div>
