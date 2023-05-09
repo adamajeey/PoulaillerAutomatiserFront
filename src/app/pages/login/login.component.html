@@ -11,10 +11,12 @@
                 <form class="row_ w-100" id="form" (submit)="onSubmit()" [formGroup]="registerForm">
                   <h1 style="text-align: center;margin-bottom: 50px;">Connection</h1>
 
+                  <div class="text text-danger" style="font-size: large; text-align: center;"> <p>{{msg}}</p> </div>
+
                   <div class="col-md-12 mb-3">
                     <label>Email<span class="text-danger">*</span></label>
                       <input type="text" class="form-control" id="email" name="email" type="text" id="email" name="email"
-                        [ngClass]="{'is-invalid':submitted && registerForm.controls['email'].errors}" placeholder=""
+                        [ngClass]="{'':submitted && registerForm.controls['email'].errors}" placeholder=""
                         formControlName="email" type="email" id="email" name="email" required autocomplete="off">
                       <div *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].errors"
                         class="text-danger">
@@ -30,7 +32,7 @@
                       <div class="col-md-12 mb-3">
                         <label>Mot de passe<span class="text-danger">*</span></label>
                           <input type="text" class="form-control" id="password" name="password" type="text" id="password"
-                            [ngClass]="{'is-invalid':submitted && registerForm.controls['password'].errors}"
+                            [ngClass]="{'':submitted && registerForm.controls['password'].errors}"
                             placeholder="" formControlName="password" type="password" required>
                           <div
                             *ngIf="registerForm.controls['password'].dirty && registerForm.controls['password'].errors"

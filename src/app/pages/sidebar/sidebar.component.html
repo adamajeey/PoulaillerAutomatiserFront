@@ -1,18 +1,26 @@
-<div class="header">
+<!-- navbar -->
+<div class="header shadow">
   <div class=" p-4  w-100  d-flex justify-content-around">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-circle"
-      viewBox="0 0 16 16" role="button">
-      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-      <path
-        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-    </svg>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-geo-alt"
-      viewBox="0 0 16 16" role="button">
-      <path
-        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
-      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-    </svg>
+    <a role="button" class="navbar-brand" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
+      data-toggle="tooltip" data-placement="top" title="Infos-poulailler">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-info-circle"
+        viewBox="0 0 16 16" role="button">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+        <path
+          d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+      </svg>
+    </a>
+
+    <a role="button" role="button" class="navbar-brand text" href="#" data-toggle="tooltip" data-placement="top"
+      title="localisation" data-bs-toggle="modal" href="#exampleModalMaps">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-geo-alt"
+        role="button" viewBox="0 0 16 16">
+        <path
+          d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      </svg>
+    </a>
 
 
     <a role="button" class="navbar-brand" data-bs-toggle="modal" href="#exampleModalPassword" role="button"
@@ -24,24 +32,27 @@
       </svg>
     </a>
 
-
-    <svg width="50" height="63" viewBox="0 0 50 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M9.375 55.125C8.54167 55.125 7.8125 54.7312 7.1875 53.9437C6.5625 53.1562 6.25 52.2375 6.25 51.1875V11.8125C6.25 10.7625 6.5625 9.84375 7.1875 9.05625C7.8125 8.26875 8.54167 7.875 9.375 7.875H24.5312V11.8125H9.375V51.1875H24.5312V55.125H9.375ZM34.6875 42.9844L32.4479 40.1625L37.7604 33.4687H19.5312V29.5312H37.6562L32.3438 22.8375L34.5833 20.0156L43.75 31.5656L34.6875 42.9844Z"
-        fill="#E59E0E" />
-    </svg>
-
+    <a (click)="logout()" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip"
+      routerLink="login" data-placement="top" title="Deconnexion">
+      <svg width="50" height="63" viewBox="0 0 50 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path role="button"
+          d="M9.375 55.125C8.54167 55.125 7.8125 54.7312 7.1875 53.9437C6.5625 53.1562 6.25 52.2375 6.25 51.1875V11.8125C6.25 10.7625 6.5625 9.84375 7.1875 9.05625C7.8125 8.26875 8.54167 7.875 9.375 7.875H24.5312V11.8125H9.375V51.1875H24.5312V55.125H9.375ZM34.6875 42.9844L32.4479 40.1625L37.7604 33.4687H19.5312V29.5312H37.6562L32.3438 22.8375L34.5833 20.0156L43.75 31.5656L34.6875 42.9844Z"
+          fill="#E59E0E" />
+      </svg>
+    </a>
   </div>
 </div>
 
+
+<!-- sidebar -->
 <div class="d-flex">
-  <div class="sidebar">
+  <div class="sidebar shadow">
     <div class="list-group list-group-flush mx-3 mt-2 p-4">
       <img src="../../../assets/Rectangle 12.jpg" alt="" width="200" height="200" class="rounded-circle m-auto mb-2"
         title="logo">
     </div>
 
-    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+    <div class="list-group list-group-flush mx-3 mt-2 p-4" (click)="cacher()">
       <img src="../../../assets/Accueil.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
         title="Accueil" role="button">
     </div>
@@ -51,7 +62,7 @@
         title="parametre" role="button">
     </div>
 
-    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+    <div class="list-group list-group-flush mx-3 mt-2 p-4" (click)="afficher()">
       <img src="../../../assets/historique.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
         title="historique" role="button">
     </div>
@@ -60,14 +71,17 @@
 
   <!-- Dashboard-->
 
-  <div class="w-100 d-flex justify-content-center">
-    <app-dashboard></app-dashboard>
+  <div class="container-fluid d-flex justify-content-center">
+    <app-dashboard *ngIf="!histo"></app-dashboard>
+    <app-historique *ngIf="histo" class="container-fluid" style="margin-top: 15vh;"></app-historique>
   </div>
 </div>
 
 
+
+<!-- modif password -->
 <div class="modal modal-md fade" id="exampleModalPassword" aria-hidden="true" aria-labelledby="exampleModalPassword"
-  tabindex="-1">
+  tabindex="-2">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content shadow">
       <div class="modal-header shadow" style="background-color: #E59E0E;">
@@ -75,9 +89,52 @@
           style="margin: 0 90px;padding: 5px; min-width: 300px; border-radius: 10px; color: #FFFFFF;">Modifier votre mot
           de passe</h5>
       </div>
-      <div class="modal-body d-flex justify-content-center">
+      <div class="modal-body d-flex justify-content-center" style="padding: 10%;">
         &nbsp;
         <app-modif-password></app-modif-password>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- infos poulailler -->
+
+<div class="modal   modal-xl fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow" style="background-color: #FFFFFF">
+      <div class="modal-header shadow" style="background-color: #E59E0E;">
+
+        <h5 class="modal-title shadow p-2" id="exampleModalToggleLabel"
+          style="margin: 0 auto; border-radius: 10px; color: #FFFFFF;">Information du serre</h5>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+
+        <app-infos-poulailler></app-infos-poulailler>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Localisation -->
+
+<div class="modal   modal-xl fade" id="exampleModalMaps" aria-hidden="true" aria-labelledby="exampleModalMapsLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow" style="background-color: #FFFFFF;">
+      <div class="modal-header shadow" style="background-color:  #E59E0E;">
+        <h5 class="modal-title shadow p-2" id="exampleModalMapsLabel"
+          style="margin: 0 auto; border-radius: 10px; color: #FFFFFF;">
+          Localisation du Poulailler</h5>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.0507557503092!2d-17.471413485713548!3d14.709721789733042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b9452a5ad5%3A0xb798e476c4492163!2sFabrique%20Simplon%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1679420405682!5m2!1sfr!2ssn"
+          width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
       </div>
     </div>
   </div>

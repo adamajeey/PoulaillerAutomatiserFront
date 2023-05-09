@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/users';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +18,9 @@ export class LoginComponent implements OnInit {
   spin = false;
   errorSms = false;
   message: string = '';
+  msg: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private authService: UsersService, private router: Router) { }
     ngOnInit(){
 
       this.registerForm = this.formBuilder.group({
@@ -35,7 +39,46 @@ export class LoginComponent implements OnInit {
         return;
       }
 
+      const user:User ={
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
     }
 
-}
+
+    const users:User ={
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
+    }
+    this.authService.getConnexion(user).subscribe(
+      {
+        next: res=>{
+          console.log(res);
+          let infoConnexion = res;
+          if(infoConnexion.data){
+            this.router.navigateByUrl('accueil');
+          }
+      },
+
+      error: error =>{
+
+        setTimeout(()=> {this.spin = false; this.errorSms = false;},2000)
+        if(error) {
+          this.msg = "Email ou mot de passe incorrect!";
+          this.registerForm = this.formBuilder.group(
+            {
+              email: [''],
+              password: [''],
+            })
+
+        }
+        setTimeout(()=> {this.msg ='';},2000)
+      }
+      }
+    )
+
+  }
+
+  }
+
+
 

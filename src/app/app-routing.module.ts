@@ -1,3 +1,4 @@
+import { LocalisationPoulaillerComponent } from './pages/localisation-poulailler/localisation-poulailler.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,9 +8,10 @@ import { HistoriqueComponent } from './pages/historique/historique.component';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 
 const routes: Routes = [
-  {component:LoginComponent, path:'login'},
+
   { component:SidebarComponent, path: 'accueil'},
-  { component:HistoriqueComponent, path: 'historique'}
+  { component:HistoriqueComponent, path: 'historique'},
+  { component:LoginComponent, path: '' }
 ];
 
 @NgModule({

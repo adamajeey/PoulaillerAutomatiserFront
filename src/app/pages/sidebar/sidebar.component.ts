@@ -10,10 +10,37 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SidebarComponent implements OnInit {
 
+histo: boolean = false
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  displayStyle = "none";
+
+
+openPopup() {
+  this.displayStyle = "block";
+}
+
+closePopup() {
+  this.displayStyle = "none";
+
+}
+
+logout = () =>{
+  localStorage.removeItem('currentUser')
+ /*  window.location.pathname ='login' */
+ this.router.navigateByUrl('/')
+};
+
+afficher(){
+  this.histo = true;
+};
+
+cacher(){
+  this.histo = false;
+};
 
 
 }

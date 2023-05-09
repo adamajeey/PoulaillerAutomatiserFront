@@ -14,6 +14,7 @@ import { ModifPasswordComponent } from './pages/modif-password/modif-password.co
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InfosPoulaillerComponent } from './pages/infos-poulailler/infos-poulailler.component';
 import { LocalisationPoulaillerComponent } from './pages/localisation-poulailler/localisation-poulailler.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -39,7 +40,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     ReactiveFormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    HttpClientModule,
     
+
   ],
   providers: [],
   bootstrap: [AppComponent]
