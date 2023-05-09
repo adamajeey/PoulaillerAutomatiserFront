@@ -15,6 +15,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InfosPoulaillerComponent } from './pages/infos-poulailler/infos-poulailler.component';
 import { LocalisationPoulaillerComponent } from './pages/localisation-poulailler/localisation-poulailler.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ParametrageComponent } from './pages/parametrage/parametrage.component';
 
 
 
@@ -29,7 +30,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     ModifPasswordComponent,
     DashboardComponent,
     InfosPoulaillerComponent,
-    LocalisationPoulaillerComponent
+    LocalisationPoulaillerComponent,
+    ParametrageComponent
 
   ],
   imports: [

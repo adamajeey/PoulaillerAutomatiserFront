@@ -11,12 +11,12 @@ export class DashboardComponent {
 
   imageRechaud = '';  imageFroidir = ''; imagePorte = ''; imageEau = ''; imageAliment = ''; imageLampe = '';
   buttonRecaud ='';   buttonFroidir ='';  buttonPorte ='';  buttonEau =''; buttonAliment =''; buttonLampe ='';
-  chaud0 = '../assets/image/chaud0.png'; offChaud = '../assets/image/off.png'; chaud1 = '../assets/image/chaud1.png'; onChaud = '../assets/image/on.png';
-  fanoff = '../assets/image/fanoff.png'; offFan = '../assets/image/off.png'; fanon = '../assets/image/fanon.gif'; onFan = '../assets/image/on.png';
-  eau0 = '../assets/image/eau0.png';    offEau = '../assets/image/off.png'; eau1 = '../assets/image/eau1.png'; onEau = '../assets/image/on.png';
-  vanne0 = '../assets/image/vanne0.png'; offVanne = '../assets/image/off.png'; vanne1 = '../assets/image/vanne1.png'; onVanne = '../assets/image/on.png';
-  porte0 = '../assets/image/porte0.png'; offPorte = '../assets/image/off.png'; porte1 = '../assets/image/porte1.png'; onPorte = '../assets/image/on.png';
-  lampe0 = '../assets/image/lampe0.png'; offLampe = '../assets/image/off.png'; lampe1 = '../assets/image/lampe1.png'; onLampe = '../assets/image/on.png';
+  chaud0 = '../assets/image/chaud0.png'; offChaud = '../assets/image/off.svg'; chaud1 = '../assets/image/chaud1.png'; onChaud = '../assets/image/on.svg';
+  fanoff = '../assets/image/fanoff.png'; offFan = '../assets/image/off.svg'; fanon = '../assets/image/fanon.gif'; onFan = '../assets/image/on.svg';
+  eau0 = '../assets/image/eau0.png';    offEau = '../assets/image/off.svg'; eau1 = '../assets/image/eau1.png'; onEau = '../assets/image/on.svg';
+  vanne0 = '../assets/image/vanne0.png'; offVanne = '../assets/image/off.svg'; vanne1 = '../assets/image/vanne1.png'; onVanne = '../assets/image/on.svg';
+  porte0 = '../assets/image/porte0.png'; offPorte = '../assets/image/off.svg'; porte1 = '../assets/image/porte1.png'; onPorte = '../assets/image/on.svg';
+  lampe0 = '../assets/image/lampe0.png'; offLampe = '../assets/image/off.svg'; lampe1 = '../assets/image/lampe1.png'; onLampe = '../assets/image/on.svg';
 
 /* allumer ou eteindre de la Lampe  */
   onClickLampe() {
@@ -31,23 +31,23 @@ export class DashboardComponent {
   }
   /* overture et fermeture de la porte */
   onClickPorte() {
-    if (this.imagePorte === this.porte1 && this.buttonPorte === this.offPorte  ) {
+    if (this.imagePorte === this.porte1 && this.buttonPorte === this.onPorte  ) {
       this.imagePorte = this.porte0;
-      this.buttonPorte = this.onPorte;
+      this.buttonPorte = this.offPorte;
      } else {
       this.imagePorte = this.porte1;
-      this.buttonPorte = this.offPorte;
+      this.buttonPorte = this.onPorte;
     }
 
   }
   /* allumer ou eteindre le robinot  */
   onClickEau() {
-    if (this.imageEau === this.eau1 && this.buttonEau === this.offEau ) {
+    if (this.imageEau === this.eau1 && this.buttonEau === this.onEau ) {
       this.imageEau = this.eau0;
-      this.buttonEau = this.onEau;
+      this.buttonEau = this.offEau;
      } else {
       this.imageEau = this.eau1;
-      this.buttonEau = this.offEau;
+      this.buttonEau = this.onEau;
     }
 
   }
