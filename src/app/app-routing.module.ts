@@ -6,12 +6,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { HistoriqueComponent } from './pages/historique/historique.component';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
+import { ParametrageComponent } from './pages/parametrage/parametrage.component';
 
 const routes: Routes = [
 
   { component:SidebarComponent, path: 'accueil'},
   { component:HistoriqueComponent, path: 'historique'},
-  { component:LoginComponent, path: '' }
+  { component:LoginComponent, path: '' },
+  { component:ParametrageComponent, path: 'reglage' }
 ];
 
 @NgModule({

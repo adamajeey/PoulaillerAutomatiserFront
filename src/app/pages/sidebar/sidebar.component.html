@@ -57,7 +57,7 @@
         title="Accueil" role="button">
     </div>
 
-    <div class="list-group list-group-flush mx-3 mt-2 p-4">
+    <div class="list-group list-group-flush mx-3 mt-2 p-4"  (click)="wanei()">
       <img src="../../../assets/parametre.svg" alt="" width="100" height="100" class="rounded-circle m-auto mb-2"
         title="parametre" role="button">
     </div>
@@ -72,8 +72,9 @@
   <!-- Dashboard-->
 
   <div class="container-fluid d-flex justify-content-center">
-    <app-dashboard *ngIf="!histo"></app-dashboard>
+    <app-dashboard *ngIf="dash"></app-dashboard>
     <app-historique *ngIf="histo" class="container-fluid" style="margin-top: 15vh;"></app-historique>
+    <app-parametrage *ngIf="reglage"></app-parametrage>
   </div>
 </div>
 
