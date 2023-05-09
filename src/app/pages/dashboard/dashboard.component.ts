@@ -20,11 +20,11 @@ export class DashboardComponent {
 
 /* allumer ou eteindre de la Lampe  */
   onClickLampe() {
-    if (this.imageLampe === this.lampe1 && this.buttonLampe === this.offLampe  ) {
-      this.imageLampe = this.lampe0;
+    if (this.imageLampe === this.lampe0 && this.buttonLampe === this.offLampe  ) {
+      this.imageLampe = this.lampe1;
       this.buttonLampe = this.onLampe;
      } else {
-      this.imageLampe = this.lampe1;
+      this.imageLampe = this.lampe0;
       this.buttonLampe = this.offLampe;
     }
 
@@ -74,11 +74,11 @@ onClickExtracteur() {
 
   }
   onClickAliment() {
-    if (this.imageAliment === this.vanne1 && this.buttonAliment === this.onVanne  ) {
-      this.imageAliment = this.vanne0;
+    if (this.imageAliment === this.vanne0 && this.buttonAliment === this.onVanne  ) {
+      this.imageAliment = this.vanne1;
       this.buttonAliment = this.offVanne;
      } else {
-      this.imageAliment = this.vanne1;
+      this.imageAliment = this.vanne0;
       this.buttonAliment = this.onVanne;
     }
 
@@ -93,7 +93,7 @@ onClickExtracteur() {
     this.imageFroidir = this.fanoff
     this.buttonFroidir = this.offFan;
 
-    this.imageAliment = this.vanne0
+    this.imageAliment = this.vanne1
     this.buttonAliment = this.offVanne;
 
     this.imagePorte = this.porte0
