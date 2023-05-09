@@ -2,9 +2,13 @@
   font-size: 22px;
   display: flex;
   justify-content: center;
-  width: 67%;
+  width: 74%;
+  border-radius: 12px;
   height: 50px;
+  background-color: #E59E0E;
   margin:0 auto;
+  color: #FFFFFF;
+  padding: 10 10px;
 }
 
 .recherche{
@@ -13,7 +17,7 @@
   justify-content: end;
 }
 .container{
-  width: 80%;
+  width: 100%;
 }
 
 .bag{ background-color: #E59E0E;
