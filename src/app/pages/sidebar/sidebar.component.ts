@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SidebarComponent implements OnInit {
 
 histo: boolean = false
+dash=true;
+reglage: boolean = false
 
   constructor(private router: Router) {}
 
@@ -29,18 +31,31 @@ closePopup() {
 }
 
 logout = () =>{
-  localStorage.removeItem('currentUser')
- /*  window.location.pathname ='login' */
+ localStorage.removeItem('currentUser')
  this.router.navigateByUrl('/')
 };
 
 afficher(){
   this.histo = true;
+  this.dash = false
+  this.reglage =false
 };
 
 cacher(){
   this.histo = false;
+  this.dash = true
+  this.reglage = false
 };
+
+wanei(){
+  this.reglage = true;
+  this.dash = false
+  this.histo =false
+}
+
+neub(){
+  this.reglage = false;
+}
 
 
 }

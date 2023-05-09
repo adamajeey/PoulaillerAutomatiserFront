@@ -43,7 +43,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-    
+
 
   ],
   providers: [],
