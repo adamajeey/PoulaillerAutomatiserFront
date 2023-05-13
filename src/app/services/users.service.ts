@@ -38,7 +38,7 @@ export class UsersService {
     //Connexion de l'utilisateur
 
   getConnexion(users:User){
-    return this.httpClient.post<User>(`${environment.apiUrl}/api/login`,users).
+    return this.httpClient.post<User>(`http://localhost:3000/api/login`,users).
       pipe(map(users => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         //Ceci permet de garder l'utilisateur connecté entre les differentes pages
@@ -52,7 +52,7 @@ export class UsersService {
   }
 
   update(id:any,users:User){
-    return this.httpClient.patch<User>(`${environment.apiUrl}/api/update/${id}`,users)
+    return this.httpClient.patch<User>(`http://localhost:3000/api/update/${id}`,users)
   }
 
 
