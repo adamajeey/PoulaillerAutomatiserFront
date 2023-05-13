@@ -3,6 +3,8 @@ import { BehaviorSubject, map } from 'rxjs';
 import { environment } from '../environments/environment';
 import { User } from '../models/users';
 import { HttpClient } from '@angular/common/http'
+import { Socket } from 'ngx-socket-io';
+import { io } from 'socket.io-client';
 
 
 @Injectable({
@@ -10,9 +12,12 @@ import { HttpClient } from '@angular/common/http'
 })
 export class UsersService {
 
+
+
    //Creation de l'objet behavior subject qui require une valeeur initiale ici de type utilisateur
   //Permet d'emettre la valeur actuel lorsqu'on s'abonne à l'observable BehaviorSubject
   private currentUserSubject: BehaviorSubject<User>;
+
 
   //Injection de dependance du module httpClient
   //Qui permet de faire les requetes
@@ -22,6 +27,7 @@ export class UsersService {
     //Stockage du token dans l'observable currentUserSubject
 
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')!!));
+    this
   }
 
   //Creation de la methode get pour recuperer la valeur du token actuelle
@@ -48,5 +54,6 @@ export class UsersService {
   update(id:any,users:User){
     return this.httpClient.patch<User>(`${environment.apiUrl}/api/update/${id}`,users)
   }
+
 
 }

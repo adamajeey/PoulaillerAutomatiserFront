@@ -53,11 +53,6 @@ wanei(){
   this.histo =false
 }
 
-neub(){
-  this.reglage = false;
-}
-
-
 }
 
 

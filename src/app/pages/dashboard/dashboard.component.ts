@@ -1,13 +1,52 @@
-import { Component } from '@angular/core';
-
+import { TemphumService } from 'src/app/services/temphum.service';
+import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/app/environments/environment';
+import { io } from 'socket.io-client';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+
+  realtimeTemp=0; realtimeHum=0;
+  socket:any;
 
   showDashboard:boolean = true;
+  constructor(private TemphumService:TemphumService) {
+   }
+
+  ngOnInit(): void {
+
+    this.imageRechaud = this.chaud0
+    this.buttonRecaud = this.offChaud;
+
+    this.imageFroidir = this.fanoff
+    this.buttonFroidir = this.offFan;
+
+    this.imageAliment = this.vanne1
+    this.buttonAliment = this.offVanne;
+
+    this.imagePorte = this.porte0
+    this.buttonPorte = this.offPorte;
+
+    this.imageLampe = this.lampe0
+    this.buttonLampe = this.offLampe;
+
+    this.imageEau = this.eau0
+    this.buttonEau = this.offEau;
+
+    this.TemphumService.getTemp().subscribe({
+      next:(data:any)=>{
+      this.realtimeTemp = data.slice(31, 33);
+      this.realtimeHum = data.slice(10, 12);
+      }
+    })
+
+  }
+
+
+
 
   imageRechaud = '';  imageFroidir = ''; imagePorte = ''; imageEau = ''; imageAliment = ''; imageLampe = '';
   buttonRecaud ='';   buttonFroidir ='';  buttonPorte ='';  buttonEau =''; buttonAliment =''; buttonLampe ='';
@@ -20,15 +59,15 @@ export class DashboardComponent {
 
 /* allumer ou eteindre de la Lampe  */
   onClickLampe() {
-    if (this.imageLampe === this.lampe0 && this.buttonLampe === this.offLampe  ) {
+      this.imageLampe === this.lampe0 && this.buttonLampe === this.offLampe
       this.imageLampe = this.lampe1;
       this.buttonLampe = this.onLampe;
-     } else {
+     }
+     onClickLampe1() {
       this.imageLampe = this.lampe0;
       this.buttonLampe = this.offLampe;
     }
 
-  }
   /* overture et fermeture de la porte */
   onClickPorte() {
     if (this.imagePorte === this.porte1 && this.buttonPorte === this.onPorte  ) {
@@ -83,28 +122,12 @@ onClickExtracteur() {
     }
 
   }
-  constructor() { }
 
-  ngOnInit() {
+  ledOn() {
+    this.TemphumService.LedOn(); // Appel de la méthode du service pour allumer la LED
+  };
 
-    this.imageRechaud = this.chaud0
-    this.buttonRecaud = this.offChaud;
-
-    this.imageFroidir = this.fanoff
-    this.buttonFroidir = this.offFan;
-
-    this.imageAliment = this.vanne1
-    this.buttonAliment = this.offVanne;
-
-    this.imagePorte = this.porte0
-    this.buttonPorte = this.offPorte;
-
-    this.imageLampe = this.lampe0
-    this.buttonLampe = this.offLampe;
-
-    this.imageEau = this.eau0
-    this.buttonEau = this.offEau;
-
+  ledOff() {
+    this.TemphumService.LedOff(); // Appel de la méthode du service pour éteindre la LED
   }
-
 }

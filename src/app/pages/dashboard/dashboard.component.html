@@ -5,8 +5,8 @@
             <div class="col-md-4">
               <div class="card border border-3 border-warning" style="width:400px;height: 200px;">
                 <div class="card-body text-center">
-                  <h4 class="card-title">Température</h4>
-                  <h2>25°</h2>
+                  <h4 class="card-title" style="font-size: 30px;">Température</h4><br>
+                  <h2 style="font-size: 50px;">{{realtimeTemp}}°C</h2>
                 </div>
               </div>
             </div>
@@ -33,9 +33,10 @@
                   <div>
                     <img class="card-img-top"src="{{imageLampe}}" alt="" style="width:100px">
                   </div>
-                  <button (click)="onClickLampe()" type="button" class="btn border-0 ">
-                    <img class="card-img-top" src="{{buttonLampe}}"  alt="" style="width:30%">
-                  </button>
+                  <span class=" d-flex gap-5 justify-content-center">
+                    <button type="button" class="btn btn-success" (click)="onClickLampe(); ledOn()">On</button>
+                    <button type="button" class="btn btn-danger" (click)=" onClickLampe1(); ledOff()">Off</button>
+                </span>
                 </div>
                 <div class="card-body text-center">
                   <h4 class="card-title">porte</h4>
@@ -53,8 +54,8 @@
               <div class="col-md-4">
                 <div class="card border border-3 border-warning" style="width:400px; height: 200px;">
                   <div class="card-body text-center">
-                    <h4 class="card-title">Humidité</h4>
-                    <h2>60%</h2>
+                    <h4 class="card-title" style="font-size: 30px;">Humidité</h4><br>
+                    <h2 style="font-size: 50px;">{{realtimeHum}}%</h2>
                   </div>
                 </div>
               </div>

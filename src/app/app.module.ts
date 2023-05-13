@@ -16,11 +16,19 @@ import { InfosPoulaillerComponent } from './pages/infos-poulailler/infos-poulail
 import { LocalisationPoulaillerComponent } from './pages/localisation-poulailler/localisation-poulailler.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ParametrageComponent } from './pages/parametrage/parametrage.component';
+import { Socket, SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+import { TemphumService } from './services/temphum.service';
+import { io } from 'socket.io-client';
 
 
 
-/* import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
+const config: SocketIoConfig={
+  url: 'http://localhost:3000',
+  options : {
+    transports : ['websocket']
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +39,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     DashboardComponent,
     InfosPoulaillerComponent,
     LocalisationPoulaillerComponent,
-    ParametrageComponent
-
+    ParametrageComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,10 +50,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component'; */
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-
-
+    SocketIoModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

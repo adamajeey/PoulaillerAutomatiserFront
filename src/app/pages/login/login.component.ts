@@ -44,11 +44,6 @@ export class LoginComponent implements OnInit {
       password: this.registerForm.value.password
     }
 
-
-    const users:User ={
-      email: this.registerForm.value.email,
-      password: this.registerForm.value.password
-    }
     this.authService.getConnexion(user).subscribe(
       {
         next: res=>{
