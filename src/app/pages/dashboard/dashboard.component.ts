@@ -1,7 +1,7 @@
+import { UsersService } from 'src/app/services/users.service';
 import { TemphumService } from 'src/app/services/temphum.service';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/app/environments/environment';
-import { io } from 'socket.io-client';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,12 +11,28 @@ export class DashboardComponent implements OnInit {
 
   realtimeTemp=0; realtimeHum=0;
   socket:any;
-
+  filter_entree: any;
   showDashboard:boolean = true;
-  constructor(private TemphumService:TemphumService) {
+
+  constructor(private TemphumService:TemphumService, private UsersService:UsersService) {
+
    }
 
   ngOnInit(): void {
+// this.UsersService.temp().subscribe((data:any)=>{
+//   console.log(data);
+
+// })
+
+this.TemphumService.getTemp().subscribe({
+  next:(data:any)=>{
+  this.realtimeTemp = data.slice(31, 33);
+  this.realtimeHum = data.slice(10, 12);
+  this.filter_entree = [data]
+  console.log(data);
+
+  }
+})
 
     this.imageRechaud = this.chaud0
     this.buttonRecaud = this.offChaud;
@@ -36,12 +52,8 @@ export class DashboardComponent implements OnInit {
     this.imageEau = this.eau0
     this.buttonEau = this.offEau;
 
-    this.TemphumService.getTemp().subscribe({
-      next:(data:any)=>{
-      this.realtimeTemp = data.slice(31, 33);
-      this.realtimeHum = data.slice(10, 12);
-      }
-    })
+
+
 
   }
 
@@ -92,25 +104,25 @@ export class DashboardComponent implements OnInit {
   }
 
   /* allumer ou eteindre l'extracteur  */
-onClickExtracteur() {
-  if (this.imageFroidir === this.fanon && this.buttonFroidir === this.onFan  ) {
+onClickExtracteur1() {
+    this.imageFroidir === this.fanon && this.buttonFroidir === this.onFan
     this.imageFroidir = this.fanoff;
     this.buttonFroidir = this.offFan;
-   } else {
+  }
+  onClickExtracteur() {
     this.imageFroidir = this.fanon;
     this.buttonFroidir = this.onFan;
    }
-  }
+
     /* allumer ou eteindre le rechauffeur */
   onClickRechauffeur() {
-    if (this.imageRechaud === this.chaud1 && this.buttonRecaud === this.onChaud  ) {
+     this.imageRechaud === this.chaud1 && this.buttonRecaud === this.onChaud
       this.imageRechaud = this.chaud0;
       this.buttonRecaud = this.offChaud;
-     } else {
-      this.imageRechaud = this.chaud1;
-      this.buttonRecaud = this.onChaud;
-    }
-
+  }
+  onClickRechauffeur1() {
+    this.imageRechaud = this.chaud1;
+    this.buttonRecaud = this.onChaud;
   }
   onClickAliment() {
     if (this.imageAliment === this.vanne0 && this.buttonAliment === this.onVanne  ) {
@@ -129,5 +141,21 @@ onClickExtracteur() {
 
   ledOff() {
     this.TemphumService.LedOff(); // Appel de la méthode du service pour éteindre la LED
+  };
+
+  ChaufOn() {
+    this.TemphumService.ChaufOn(); // Appel de la méthode du service pour allumer le chauffage
+  };
+
+  ChaufOff() {
+    this.TemphumService.ChaufOff(); // Appel de la méthode du service pour éteindre le chauffage
+  };
+
+  VentilOn() {
+    this.TemphumService. VentilOn(); // Appel de la méthode du service pour allumer le refroidisseur
+  };
+
+  VentilOff() {
+    this.TemphumService. VentilOff(); // Appel de la méthode du service pour éteindre le refroidisseur
   }
 }

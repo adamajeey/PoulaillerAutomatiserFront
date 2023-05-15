@@ -5,13 +5,13 @@ import { User } from '../models/users';
 import { HttpClient } from '@angular/common/http'
 import { Socket } from 'ngx-socket-io';
 import { io } from 'socket.io-client';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-
 
 
    //Creation de l'objet behavior subject qui require une valeeur initiale ici de type utilisateur
@@ -29,6 +29,9 @@ export class UsersService {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')!!));
     this
   }
+  // temp(){
+  //   return this.socket.fromEvent('temperer')
+  // }
 
   //Creation de la methode get pour recuperer la valeur du token actuelle
   public get currentUserValue(): User {

@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ParametrageComponent } from './pages/parametrage/parametrage.component';
 import { Socket, SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { TemphumService } from './services/temphum.service';
-import { io } from 'socket.io-client';
+
 
 
 
@@ -50,7 +50,7 @@ const config: SocketIoConfig={
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-    SocketIoModule,
+    SocketIoModule.forRoot(config),
   ],
   providers: [ ],
   bootstrap: [AppComponent]
