@@ -174,6 +174,7 @@ ngOnInit(): void {
   }
 
   VentilOff() {
+    this.TemphumService. VentilOff(); // Appel de la méthode du service pour éteindre le refroidiseur
     this.TemphumService.VentilOff(); // Appel de la méthode du service pour éteindre le refroidisseur
   }
 /*
