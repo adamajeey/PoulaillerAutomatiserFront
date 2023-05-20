@@ -14,15 +14,18 @@ export class DashboardComponent implements OnInit {
   filter_entree: any;
   showDashboard: boolean = true;
   realtimeEauLevel: number = 0; // Niveau d'eau en pourcentage
+  
 
 constructor(private TemphumService: TemphumService, private UsersService: UsersService) {}
 
 ngOnInit(): void {
   this.TemphumService.getTemp().subscribe({
     next: (data: any) => {
-      const temperature = data.substring(31, 33);
-      const humidity = data.substring(10, 12);
+      this.realtimeTemp = data.slice(33, 35);
+      this.realtimeHum = data.slice(12, 14);
       this.realtimeEauLevel = parseInt(data.slice(0, 2)); // Convertir en nombre entier
+      console.log('temperature:', this.realtimeTemp);
+      console.log('humidité:', this.realtimeHum);
       console.log('WaterLevel:', this.realtimeEauLevel);
     }
   });
@@ -176,19 +179,7 @@ ngOnInit(): void {
   VentilOff() {
     this.TemphumService.VentilOff(); // Appel de la méthode du service pour éteindre le refroidisseur
   }
-/* 
- updateWaterLevel(): void {
-    // Simuler la mise à jour du niveau d'eau depuis une source de données externe
-    // Ici, nous utilisons un intervalle pour augmenter progressivement le niveau d'eau
-    const interval = setInterval(() => {
-      if (this.realtimeEauLevel < 100) {
-        this.realtimeEauLevel += 10; // Augmenter le niveau d'eau de 10%
-      } else {
-        clearInterval(interval); // Arrêter l'intervalle une fois le niveau maximum atteint
-      }
-    }, 1000); // Mettre à jour toutes les 1 seconde (vous pouvez ajuster l'intervalle selon vos besoins)
-  }
-   */
+
 
   getProgressBarColor(): string {
     if (this.realtimeEauLevel >= 40) {
