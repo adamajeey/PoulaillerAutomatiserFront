@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  realtimeTemp: any;
-  realtimeHum:any;
+  realtimeTemp = 0
+  realtimeHum = 0
   socket: any;
   filter_entree: any;
   showDashboard: boolean = true;
@@ -20,8 +20,8 @@ constructor(private TemphumService: TemphumService, private UsersService: UsersS
 ngOnInit(): void {
   this.TemphumService.getTemp().subscribe({
     next: (data: any) => {
-      const temperature = data.substring(31, 33);
-      const humidity = data.substring(10, 12);
+      this.realtimeTemp = data.slice(31, 33);
+      this.realtimeHum = data.slice(10, 12);
       this.realtimeEauLevel = parseInt(data.slice(0, 2)); // Convertir en nombre entier
       console.log('WaterLevel:', this.realtimeEauLevel);
     }
@@ -174,7 +174,6 @@ ngOnInit(): void {
   }
 
   VentilOff() {
-    this.TemphumService. VentilOff(); // Appel de la méthode du service pour éteindre le refroidiseur
     this.TemphumService.VentilOff(); // Appel de la méthode du service pour éteindre le refroidisseur
   }
 /*
