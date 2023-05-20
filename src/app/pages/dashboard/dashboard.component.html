@@ -17,10 +17,21 @@
               <img class="card-img-top" src="{{imageEau}}" alt="" style="width:100px">
             </div>
             <div class="card-body">
-              <button (click)="onClickEau()" type="button" class="btn border-0 ">
+             <!--  <button (click)="onClickEau()" type="button" class="btn border-0 ">
                 <img class="card-img-top" src="{{buttonEau}}" alt="" style="width:30%">
-              </button>
+              </button> -->
             </div>
+            <span class="d-flex ">
+            <div class="progress-bar  card-body">
+              <div class="progress-bar-inner" [style.height]="realtimeEauLevel + '%'"><h1 class="progress-bar-text text-black">{{ realtimeEauLevel }} %</h1></div>
+             
+            </div>
+           <div class="progress-bar-text text-black">
+                
+              </div>
+            </span>
+            
+            
           </div>
         </div>
       </div>
@@ -102,3 +113,4 @@
       </div>
     </div>
   </div>
+</div>
