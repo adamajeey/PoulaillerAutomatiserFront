@@ -60,4 +60,6 @@ onSocketConnected(){
     this.socket.emit('VentilOff', '3'); // Envoyer la commande d'extinction du chauffage
   }
 
+  
+
 }

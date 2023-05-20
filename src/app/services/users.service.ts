@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http'
 import { Socket } from 'ngx-socket-io';
 import { io } from 'socket.io-client';
 import { Observable } from 'rxjs';
+import { Heure } from '../models/Heures';
 
 
 @Injectable({
@@ -56,6 +57,12 @@ export class UsersService {
 
   update(id:any,users:User){
     return this.httpClient.patch<User>(`http://localhost:3000/api/update/${id}`,users)
+  }
+
+  addHeure(heure: Heure){ /* console.log(heure); */
+    return this.httpClient.post('http://localhost:3000/api/heure',heure);
+
+
   }
 
 

@@ -1,3 +1,4 @@
+import { TemphumService } from 'src/app/services/temphum.service';
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,13 +11,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SidebarComponent implements OnInit {
 
+  realtimeTemp=0; realtimeHum=0;
+  socket:any;
+  filter_entree: any;
 histo: boolean = false
 dash=true;
 reglage: boolean = false
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private TemphumService:TemphumService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.TemphumService.getTemp().subscribe({
+      next:(data:any)=>{
+      this.realtimeTemp = data.slice(31, 33);
+      this.realtimeHum = data.slice(10, 12);
+      this.filter_entree = [data]
+      console.log(data);
+
+      }
+    })
+
+  }
 
   displayStyle = "none";
 

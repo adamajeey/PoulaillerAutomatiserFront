@@ -51,10 +51,6 @@ this.TemphumService.getTemp().subscribe({
 
     this.imageEau = this.eau0
     this.buttonEau = this.offEau;
-
-
-
-
   }
 
 
@@ -104,15 +100,15 @@ this.TemphumService.getTemp().subscribe({
   }
 
   /* allumer ou eteindre l'extracteur  */
-onClickExtracteur1() {
-    this.imageFroidir === this.fanon && this.buttonFroidir === this.onFan
+onClickExtracteur() {
+  this.imageFroidir === this.fanon && this.buttonFroidir === this.onFan
     this.imageFroidir = this.fanoff;
     this.buttonFroidir = this.offFan;
   }
-  onClickExtracteur() {
+    onClickExtracteur1() {
     this.imageFroidir = this.fanon;
     this.buttonFroidir = this.onFan;
-   }
+  }
 
     /* allumer ou eteindre le rechauffeur */
   onClickRechauffeur() {
@@ -156,6 +152,6 @@ onClickExtracteur1() {
   };
 
   VentilOff() {
-    this.TemphumService. VentilOff(); // Appel de la méthode du service pour éteindre le refroidisseur
+    this.TemphumService. VentilOff(); // Appel de la méthode du service pour éteindre le refroidiseur
   }
 }

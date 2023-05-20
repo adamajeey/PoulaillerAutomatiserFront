@@ -31,7 +31,7 @@
           <h4 class="card-title">Lampe</h4>
           <div>
             <img class="card-img-top" src="{{imageLampe}}" alt="" style="width:100px">
-          </div>
+          </div> <br>
           <span class=" d-flex gap-5 justify-content-center">
             <button type="button" class="btn btn-success" (click)="onClickLampe(); ledOn()">On</button>
             <button type="button" class="btn btn-danger" (click)=" onClickLampe1(); ledOff()">Off</button>
@@ -82,18 +82,19 @@
       <div class="card-body text-center">
         <h4 class="card-title">Refroidisseur</h4>
         <div>
-          <img class="card-img-top" src="{{imageFroidir}}" alt="" style="width:100px">
-        </div>
+          <img  class="card-img-top" src="{{imageFroidir}}" alt="" style="width:100px;">
+          <img  *ngIf="realtimeTemp >=28 "src="../assets/image/fanon.gif" alt="" srcset="" style="width:100px">
+        </div><br>
         <span class=" d-flex gap-5 justify-content-center">
-          <button type="button" class="btn btn-success" (click)="onClickExtracteur(); VentilOn()">On</button>
-          <button type="button" class="btn btn-danger" (click)="onClickExtracteur1(); VentilOff()">Off</button>
+          <button  type="button" class="btn btn-success" (click)="onClickExtracteur1(); VentilOn()">On</button>
+          <button type="button" class="btn btn-danger" (click)="onClickExtracteur(); VentilOff()">Off</button>
         </span>
       </div>
       <div class="card-body text-center">
         <h4 class="card-title">Rechauffage</h4>
         <div>
           <img class="card-img-top" src="{{imageRechaud}}" alt="" style="width:80px">
-        </div>
+        </div><br>
         <span class=" d-flex gap-5 justify-content-center">
           <button type="button" class="btn btn-success" (click)="onClickRechauffeur1(); ChaufOn()">On</button>
           <button type="button" class="btn btn-danger" (click)="onClickRechauffeur(); ChaufOff()">Off</button>

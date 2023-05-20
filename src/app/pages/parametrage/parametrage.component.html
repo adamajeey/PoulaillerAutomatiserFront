@@ -3,35 +3,32 @@
       <div class="row" style="background-color: #E59E0E;">
           <div class="col-md-12 right">
                <div class="input-box">
-                  <header class="shadow" style="font-size: 30px; color: #FFFFFF; border: solid 2px #FFFFFF; border-radius: 10px;">Heures</header><br>
-                  <form>
+                  <header class="shadow" style="font-size: 30px; color: #FFFFFF; border: solid 2px #FFFFFF; border-radius: 10px;">Heures d'alimentation</header><br>
+                  <form (submit)="onSubmit()" [formGroup]="registerForm">
                       <div class="form-group col-md-12">
                         <label for="exampleInputPassword1" style="color: #FFFFFF;">Première Heure<span class="text-danger">*</span></label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected> </option>
-                          <option value="1">09h00</option>
-                          <option value="2">08h00</option>
-                          <option value="3">10h00</option>
+                        <select class="form-select" aria-label="Default select example"  name="heure1" formControlName="heure1">
+                          <option value="9" selected>09:00</option>
+                          <option value="8">08:00</option>
+                          <option value="10">10:00</option>
                         </select>
                       </div><br>
 
                       <div class="form-group col-md-12">
                         <label for="exampleInputPassword1" style="color: #FFFFFF;">Deuxième Heure<span class="text-danger">*</span></label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected> </option>
-                          <option value="1">14h00</option>
-                          <option value="2">15h00</option>
-                          <option value="3">16h00</option>
+                        <select class="form-select" aria-label="Default select example" name="heure2" formControlName="heure2">
+                          <option value="14" selected>14:00</option>
+                          <option value="15">15:00</option>
+                          <option value="16">16:00</option>
                         </select>
                       </div><br>
 
                       <div class="form-group col-md-12">
                         <label for="exampleInputPassword1" style="color: #FFFFFF;">troisième Heure<span class="text-danger">*</span></label>
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected> </option>
-                          <option value="1">19h00</option>
-                          <option value="2">20h00</option>
-                          <option value="3">21h00</option>
+                        <select class="form-select" aria-label="Default select example"  name="heure3" formControlName="heure3">
+                          <option value="19" selected>19:00</option>
+                          <option value="20">20:00</option>
+                          <option value="21">21:00</option>
                         </select>
                       </div><br>
                       <div class="d-flex justify-content-center">
@@ -45,5 +42,5 @@
       </div>
   </div>
 
-  
+
 
