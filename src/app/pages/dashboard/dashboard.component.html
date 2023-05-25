@@ -12,26 +12,23 @@
       <div class="col-md-4 mt-5">
         <div class="card border border-3 border-warning" style="width:400px;">
           <div class="card-body text-center">
-            <h4 class="card-title">Eau</h4>
+            <h4 class="card-title"> {{realtimePompe}}0</h4>
             <div>
-              <img class="card-img-top" src="{{imageEau}}" alt="" style="width:100px">
+              <img class="card-img-top" src="{{imageEau}}" alt="" style="width:100px" >
             </div>
+            
             <div class="card-body">
              <!--  <button (click)="onClickEau()" type="button" class="btn border-0 ">
                 <img class="card-img-top" src="{{buttonEau}}" alt="" style="width:30%">
               </button> -->
             </div>
             <span class="d-flex ">
-            <div class="progress-bar  card-body">
-              <div class="progress-bar-inner" [style.height]="realtimeEauLevel + '%'"><h1 class="progress-bar-text text-black">{{ realtimeEauLevel }} %</h1></div>
-             
-            </div>
-           <div class="progress-bar-text text-black">
-                
+              <div class="progress-bar  card-body">
+                <div class="progress-bar-inner" [style.height]="realtimeEauLevel + '%'"><h1>{{ realtimeEauLevel }} %</h1></div>
+              </div>
+              <div class="progress-bar-text text-black">
               </div>
             </span>
-            
-            
           </div>
         </div>
       </div>
@@ -42,23 +39,54 @@
           <h4 class="card-title">Lampe</h4>
           <div>
             <img class="card-img-top" src="{{imageLampe}}" alt="" style="width:100px">
+<<<<<<< HEAD
           </div> <br>
+=======
+          </div>
+          <div class="card-body text-center">
+>>>>>>> mra
           <span class=" d-flex gap-5 justify-content-center">
             <button type="button" class="btn btn-success" (click)="onClickLampe(); ledOn()">On</button>
             <button type="button" class="btn btn-danger" (click)=" onClickLampe1(); ledOff()">Off</button>
           </span>
+         </div>
         </div>
         <div class="card-body text-center">
           <h4 class="card-title">porte</h4>
           <div>
             <img class="card-img-top" src="{{imagePorte}}" alt="" style="width:100px">
           </div>
-          <button (click)="onClickPorte()" type="button" class="btn border-0 ">
-            <img class="card-img-top" src="{{buttonPorte}}" alt="" style="width:30%">
-          </button>
+          <div class="card-body ">
+          <button type="button" class="card-img-to btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Ouvrir</button>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Code</h5>
+                  <button type="button" class="close btn btn-warning" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Taper le code pour ouvrir la porte</label>
+                      <input type="text" [(ngModel)]="enteredCode" class="form-control" placeholder="Entrez le code">
+                      <p>{{ errorMessage }}</p>
+                    </div>
+                    
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" (click)="onCode()">Valider</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
-
     </div>
     <div class="d-block ">
       <div class="col-md-4">
@@ -85,7 +113,6 @@
         </div>
       </div>
     </div>
-
   </div>
   <!--  -->
   <div class="col-md-2 mt-5 ">
@@ -105,7 +132,8 @@
         <h4 class="card-title">Rechauffage</h4>
         <div>
           <img class="card-img-top" src="{{imageRechaud}}" alt="" style="width:80px">
-        </div><br>
+        </div>
+        
         <span class=" d-flex gap-5 justify-content-center">
           <button type="button" class="btn btn-success" (click)="onClickRechauffeur1(); ChaufOn()">On</button>
           <button type="button" class="btn btn-danger" (click)="onClickRechauffeur(); ChaufOff()">Off</button>
