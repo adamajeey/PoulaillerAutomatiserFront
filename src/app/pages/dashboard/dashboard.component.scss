@@ -2,11 +2,11 @@
 .card {
     border: 4px solid #E59E0E;
   } */
-/*   .blue-icon {
+ .blue-icon {
     
     filter: invert(50%) sepia(100%) saturate(10000%) hue-rotate(190deg);
 
-  } */
+  } 
   .progress-bar {
     background-color: #ffffff;
     width: 50px;
@@ -14,7 +14,7 @@
     border: solid 3px #E59E0E;
     border-top: none;
     width: 200px;
-    height: 100px; /* Hauteur totale de la barre de progression */
+    height: 75px; /* Hauteur totale de la barre de progression */
     overflow: hidden;
     position: relative;
   }

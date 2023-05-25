@@ -20,7 +20,6 @@ export class TemphumService {
     return this.socket.fromEvent('temp');
   }
 
-
   LedOn() {
     this.socket.emit('ledOn', 'H');
   }
@@ -44,4 +43,23 @@ export class TemphumService {
   VentilOff() {
     this.socket.emit('VentilOff', '3');
   }
+
+  openDoor(code: string) {
+    this.socket.emit('openDoor', code);
+  }
+
+  // Ajoutez la fonction pour la réception de l'événement 'open'
+  onDoorOpen(): Observable<any> {
+    return this.socket.fromEvent('open');
+  }
+
+  closeDoor() {
+    this.socket.emit('closeDoor');
+  }
+  // Dans votre service "temphum.service.ts"
+// Ajoutez la fonction pour la réception de l'événement 'doorClosed'
+onDoorClosed(): Observable<any> {
+  return this.socket.fromEvent('doorClosed');
+}
+
 }
